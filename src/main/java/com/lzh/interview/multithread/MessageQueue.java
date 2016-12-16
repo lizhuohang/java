@@ -12,7 +12,7 @@ public class MessageQueue {
             new Thread(new Runnable() {
                 public void run() {
                     while (true) {
-                        mq.put((int)(Math.random() * 10000000) + "");
+                        mq.put((int) (Math.random() * 10000000) + "");
                         try {
                             Thread.currentThread().sleep(10);
                         } catch (InterruptedException e) {
