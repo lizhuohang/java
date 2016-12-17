@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
  *      2.CLH is circle on the preview node , MCS is circle on it self
  *      3.CLH has a hidden linked list , MCS has real linked list on the memory
  *      4.Change attribute for it self in CLH when unlock , Change attribute for the next node in MCS when unlock
+ *
  */
 public class MCSLock {
     public static class MCSNode{
