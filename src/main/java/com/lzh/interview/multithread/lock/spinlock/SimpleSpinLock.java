@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * Created by lizhuohang on 2016/12/16.
  *
- * spin lock : Cycle view lock has been released , gain lock once it is released
+ * spin lock : Cycle view whether lock has been released , gain lock once it is released
  * upgrade version : give up after appointed times retry
  *
  * advantage : can reduce expensive of the thread_switch if the lock is held for a short time
