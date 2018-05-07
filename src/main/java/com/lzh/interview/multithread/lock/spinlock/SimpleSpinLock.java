@@ -15,9 +15,9 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SimpleSpinLock {
 
     public static void main(String[] args) {
-        final SL spinlock = new SL();
+        final SL spinLock = new SL();
         for (int i = 0; i < 100; i++) {
-            AddThread addThread = new AddThread(spinlock);
+            AddThread addThread = new AddThread(spinLock);
             Thread t = new Thread(addThread);
             t.start();
         }
@@ -34,6 +34,7 @@ public class SimpleSpinLock {
 
         public void lock() {
             Thread current = Thread.currentThread();
+            System.out.println("Thread : "+ current.getName() + ",require lock");
             while (!owner.compareAndSet(null, current)) {
 
             }

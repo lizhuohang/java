@@ -1,5 +1,7 @@
 package com.lzh.interview.multithread;
 
+import java.util.HashMap;
+
 /**
  * Created by lizhuohang on 2016/12/14.
  */

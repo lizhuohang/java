@@ -12,35 +12,35 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class JDKReenTrantLock implements Runnable {
     public synchronized void get(){
-        System.out.println(Thread.currentThread().getId());
+        System.out.println(Thread.currentThread().getId() + "  " + System.currentTimeMillis());
         set();
     }
 
     public synchronized void set(){
-        System.out.println(Thread.currentThread().getId());
+        System.out.println(Thread.currentThread().getId() + "  " + System.currentTimeMillis());
     }
 
     ReentrantLock lock = new ReentrantLock();
     public void get_reentrant(){
         lock.lock();
-        System.out.println(Thread.currentThread().getId());
+        System.out.println(Thread.currentThread().getId() + "  " + System.currentTimeMillis());
         set_reentrant();
         lock.unlock();
     }
 
     public void set_reentrant(){
         lock.lock();
-        System.out.println(Thread.currentThread().getId());
+        System.out.println(Thread.currentThread().getId() + "  " + System.currentTimeMillis());
         lock.unlock();
     }
 
 
     public void run() {
-//        System.out.println("-------------------  result of synchronized  -------------------");
-//        get();
+        System.out.println("-------------------  result of synchronized  -------------------");
+        get();
 
-        System.out.println("-------------------  result of reentrantlock  -------------------");
-        get_reentrant();
+//        System.out.println("-------------------  result of reentrantlock  -------------------");
+//        get_reentrant();
     }
 
     public static void main(String[] args) {
