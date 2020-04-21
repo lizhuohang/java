@@ -41,12 +41,16 @@ public class Synchronization {
         }
 
         public void run() {
-            while (flag[0] != "f"){
+            while (flag[0] != "f") {
                 // while只是为了保证wait线程在notify线程notify后不再进入wait状态
                 System.out.println(getName() + " begin waiting!!!");
                 long waitTime = System.currentTimeMillis();
                 try {
+                    long cur = System.currentTimeMillis();
+                    // 同时只有一个线程能进入到 synchronized
                     synchronized (flag) {
+                        sleep(500);
+                        System.out.println(getName() + " get lock!!! wait " + (System.currentTimeMillis() - cur));
                         flag.wait();
                     }
                 } catch (InterruptedException e) {

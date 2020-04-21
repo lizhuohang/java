@@ -1,22 +1,25 @@
 package com.lzh.interview.multithread;
 
-import java.util.HashMap;
-
 /**
- * Created by lizhuohang on 2016/12/14.
+ * Created by lizhuohang on 2018/12/14.
  */
 public class MessageQueue {
+
+    private static final long RANDOM_BASE = 10000000L;
+    private static final int SLEEP_GAP = 10;
+    private static final int LOOP_TIMES = 5;
 
     public static void main(String[] args) {
         final MQ mq = new MQ(10);
 
-        for (int p = 0; p < 5; p++) {
+        for (int p = 0; p < LOOP_TIMES; p++) {
             new Thread(new Runnable() {
+
                 public void run() {
                     while (true) {
-                        mq.put((int) (Math.random() * 10000000) + "");
+                        mq.put((int) (Math.random() * RANDOM_BASE) + "");
                         try {
-                            Thread.currentThread().sleep(10);
+                            Thread.currentThread().sleep(SLEEP_GAP);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -25,13 +28,14 @@ public class MessageQueue {
             }, "Producer" + p).start();
         }
 
-        for (int c = 0; c < 5; c++) {
+        for (int c = 0; c < LOOP_TIMES; c++) {
             new Thread(new Runnable() {
+
                 public void run() {
                     while (true) {
                         mq.get();
                         try {
-                            Thread.currentThread().sleep(20);
+                            Thread.currentThread().sleep(SLEEP_GAP * 2);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -41,13 +45,12 @@ public class MessageQueue {
         }
     }
 
-
     /**
      * inner class to simulate a message queue
      */
     private static class MQ {
 
-        private String[] messages;// an array of string to storage the message
+        private String[] messages; // an array of string to storage the message
         private int opIndex; // the handle pointer
 
         public MQ(int size) {
