@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.jsoup.nodes.Document;
 
 /**
- * @author lizhuohang <lizhuohang@kuaishou.com>
+ * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2020-08-07
  */
 public interface DocumentHandler {

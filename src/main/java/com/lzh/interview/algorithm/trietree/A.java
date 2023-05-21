@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author lizhuohang <lizhuohang@kuaishou.com>
+ * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2022-05-11
  * 在实际使用的时候可能考虑到语序问题，"熙来&瓜瓜" 这种在构建树的时候可能需要倒序再构建一遍"瓜瓜&熙来"，也可以在敏感词库中增加"瓜瓜&熙来"
  * 还有很多可以优化的地方，比如字符串处理、EOF节点公用等，&其实可以不用单独设置一个节点，可以通过它下一个节点的type来代替它

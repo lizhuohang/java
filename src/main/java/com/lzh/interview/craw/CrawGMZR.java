@@ -19,7 +19,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * @author lizhuohang <lizhuohang@kuaishou.com>
+ * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2020-08-07
  */
 public class CrawGMZR {

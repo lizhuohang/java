@@ -13,7 +13,7 @@ import org.jsoup.nodes.Document;
 import com.google.common.collect.Lists;
 
 /**
- * @author lizhuohang <lizhuohang@kuaishou.com>
+ * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2020-08-07
  */
 public class CrawService {

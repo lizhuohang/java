@@ -1,7 +1,7 @@
 package com.lzh.interview.algorithm;
 
 /**
- * @author lizhuohang <lizhuohang@kuaishou.com>
+ * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2020-10-20
  */
 public class Link {

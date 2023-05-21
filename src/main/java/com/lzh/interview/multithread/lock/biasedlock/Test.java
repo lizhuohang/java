@@ -1,7 +1,7 @@
 package com.lzh.interview.multithread.lock.biasedlock;
 
 /**
- * @author lizhuohang <lizhuohang@kuaishou.com>
+ * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2021-04-02
  */
 public class Test {

@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Element;
 
 /**
- * @author lizhuohang <lizhuohang@kuaishou.com>
+ * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2020-08-07
  */
 public class CrawWDQK {
