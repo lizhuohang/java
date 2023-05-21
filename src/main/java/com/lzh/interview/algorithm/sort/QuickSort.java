@@ -25,7 +25,7 @@ public class QuickSort {
         return null;
     }
 
-    private static int[] quitSort(int[] array, int beg, int end) {
+    public static int[] quitSort(int[] array, int beg, int end) {
         if (beg >= end || array == null)
             return array;
         int p = partion(array, beg, end);
