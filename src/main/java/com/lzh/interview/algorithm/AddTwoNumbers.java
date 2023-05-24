@@ -1,60 +1,17 @@
 package com.lzh.interview.algorithm;
 
-import com.alibaba.fastjson.JSONObject;
-
 /**
  * https://leetcode.cn/problems/add-two-numbers/
  *
- * @author lizhuohang <lizhuohang@kuaishou.com>
+ * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2023-05-24
  */
 public class AddTwoNumbers {
 
-    private static class ListNode {
-        private int value;
-        private ListNode next;
-
-        public ListNode(int value) {
-            this.value = value;
-        }
-
-        public ListNode(int[] valueArr) {
-            this.value = valueArr[0];
-            ListNode tmp = this;
-            for (int i = 1; i < valueArr.length; i++) {
-                tmp.next = new ListNode(valueArr[i]);
-                tmp = tmp.next;
-            }
-        }
-
-        public int getValue() {
-            return value;
-        }
-
-        public void setValue(int value) {
-            this.value = value;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
-
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-    }
-
     public static void main(String[] args) {
         ListNode a = new ListNode(new int[] {9, 9, 9, 9, 9, 9, 9});
         ListNode b = new ListNode(new int[] {9, 9, 9, 9});
-        print(add(a, b));
-    }
-
-    private static void print(ListNode listNode) {
-        while (listNode != null) {
-            System.out.print(listNode.getValue() + " ");
-            listNode = listNode.getNext();
-        }
+        add(a, b).print();
     }
 
     private static ListNode add(ListNode a, ListNode b) {
