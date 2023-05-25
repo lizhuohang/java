@@ -34,7 +34,7 @@ public class TrieTreePhone {
 
             while (nowNode != null) {
                 if (nowNode.getValue() == value) {
-                    if (i == phone.length() - 1) {
+                    if (nowNode.isEnd) {
                         return true;
                     }
                     nowNode = nowNode.getNextLevel();
@@ -47,7 +47,7 @@ public class TrieTreePhone {
                 return false;
             }
         }
-        return true;
+        return false;
     }
 
     private static Node init(String[] phoneArr) {
@@ -61,6 +61,9 @@ public class TrieTreePhone {
                 if (nextHead == null) {
                     nowNode.setNextLevel(new Node(value));
                     nowNode = nowNode.getNextLevel();
+                    if (i == phone.length() - 1) {
+                        nowNode.setEnd(true);
+                    }
                     continue;
                 }
                 Node preNode = null;
@@ -75,6 +78,9 @@ public class TrieTreePhone {
                 if (nextHead == null) {
                     preNode.setSameLevelNext(new Node(value));
                     nextHead = preNode.getSameLevelNext();
+                    if (i == phone.length() - 1) {
+                        nextHead.setEnd(true);
+                    }
                 }
                 nowNode = nextHead;
             }
@@ -87,6 +93,8 @@ public class TrieTreePhone {
         private int value;
         private Node nextLevel;
         private Node sameLevelNext;
+
+        private boolean isEnd = false;
 
         public void print() {
             System.out.print(this.value);
@@ -123,6 +131,14 @@ public class TrieTreePhone {
 
         public void setSameLevelNext(Node sameLevelNext) {
             this.sameLevelNext = sameLevelNext;
+        }
+
+        public boolean isEnd() {
+            return isEnd;
+        }
+
+        public void setEnd(boolean end) {
+            isEnd = end;
         }
     }
 }
