@@ -11,15 +11,15 @@ public class TrieTreePhone {
     public static void main(String[] args) {
 
         Node head = init(new String[] {
-                "18612188003",
-                "18612188002",
-                "18112188002",
-                "15101657671"
+                "13465287361",
+                "13465287362",
+                "13365287362",
+                "15267509988"
         });
 
-        System.out.println(match("18612188002", head));
-        System.out.println(match("18612188001", head));
-        System.out.println(match("15101657671", head));
+        System.out.println(match("13465287362", head));
+        System.out.println(match("13465287363", head));
+        System.out.println(match("15267509988", head));
         System.out.println(match("1", head));
 
     }
