@@ -43,5 +43,6 @@ public class ListNode {
             System.out.print(listNode.getValue() + " ");
             listNode = listNode.getNext();
         }
+        System.out.println();
     }
 }
