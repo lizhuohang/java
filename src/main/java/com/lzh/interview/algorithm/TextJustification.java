@@ -3,7 +3,6 @@ package com.lzh.interview.algorithm;
 import java.util.ArrayList;
 
 import com.alibaba.fastjson.JSONObject;
-import com.lzh.interview.algorithm.trietree.A;
 
 /**
  * 文本左右对齐
