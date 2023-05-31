@@ -6,7 +6,7 @@ package com.lzh.interview.algorithm;
  * @author lizhuohang <li_zhuohang@126.com>
  * Created on 2023-05-31
  */
-public class BinaryTreeNode implements Comparable<BinaryTreeNode> {
+public class BinaryTreeNode {
 
     public BinaryTreeNode(BinaryTreeNode left, BinaryTreeNode right) {
         this.left = left;
@@ -39,9 +39,5 @@ public class BinaryTreeNode implements Comparable<BinaryTreeNode> {
 
     public void setValue(int value) {
         this.value = value;
-    }
-
-    public int compareTo(BinaryTreeNode o) {
-        return this.value - o.getValue();
     }
 }

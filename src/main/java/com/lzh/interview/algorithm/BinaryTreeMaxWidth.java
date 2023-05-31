@@ -1,6 +1,6 @@
 package com.lzh.interview.algorithm;
 
-import java.util.PriorityQueue;
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -57,7 +57,7 @@ public class BinaryTreeMaxWidth {
 
     private static int maxWidth(BinaryTreeNode head) {
         int maxWidth = 0;
-        Queue<BinaryTreeNode> queue = new PriorityQueue<BinaryTreeNode>();
+        Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
         queue.add(head);
         while (!queue.isEmpty()) {
             int length = queue.size();
