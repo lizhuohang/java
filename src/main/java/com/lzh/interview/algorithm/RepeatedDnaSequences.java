@@ -3,6 +3,7 @@ package com.lzh.interview.algorithm;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 /**
@@ -28,6 +29,6 @@ public class RepeatedDnaSequences {
                 map.put(sub, false);
             }
         }
-        return map.entrySet().stream().filter(e -> e.getValue()).map(e -> e.getKey()).collect(Collectors.toList());
+        return map.entrySet().stream().filter(e -> e.getValue()).map(Entry::getKey).collect(Collectors.toList());
     }
 }
