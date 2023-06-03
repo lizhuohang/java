@@ -13,15 +13,21 @@ import java.util.Map;
  */
 public class LengthOfLongestSubstring {
 
-    public int lengthOfLongestSubstring(String s) {
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring("abcdefghidp"));
+        System.out.println(lengthOfLongestSubstring("abcdefghidpslkz"));
+    }
+
+    public static int lengthOfLongestSubstring(String s) {
         int maxLength = 0;
         int left = 0;
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
-            if (map.containsKey(s.charAt(i))) {
-                left = Math.max(left, map.get(s.charAt(i)) + 1);
+            Character c = s.charAt(i);
+            if (map.containsKey(c)) {
+                left = Math.max(left, map.get(c) + 1);
             }
-            map.put(s.charAt(i), i);
+            map.put(c, i);
             maxLength = Math.max(maxLength, i - left + 1);
         }
         return maxLength;
