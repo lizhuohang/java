@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -26,7 +27,7 @@ public class GroupAnagrams {
         System.out.println(JSONObject.toJSONString(groupAnagrams(list)));
     }
 
-    private static ArrayList<ArrayList<String>> groupAnagrams(String[] list) {
+    private static List<ArrayList<String>> groupAnagrams(String[] list) {
         Map<String, ArrayList<String>> map = new HashMap<>();
         for (String word : list) {
             String sort = sort(word);
@@ -35,11 +36,8 @@ public class GroupAnagrams {
             }
             map.get(sort).add(word);
         }
-        ArrayList<ArrayList<String>> result = new ArrayList<>();
-        for (Entry<String, ArrayList<String>> entry : map.entrySet()) {
-            result.add(entry.getValue());
-        }
-        return result;
+
+        return map.entrySet().stream().map(Entry::getValue).collect(Collectors.toList());
     }
 
     private static String sort(String word) {
